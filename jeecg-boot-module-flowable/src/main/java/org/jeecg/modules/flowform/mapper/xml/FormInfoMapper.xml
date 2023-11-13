@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.flowform.mapper.FormInfoMapper">
+    <sql id="baseSql">
+        from
+        (SELECT id
+        ,scheme_id
+        ,name
+        ,type
+        ,category
+        ,url_address
+        ,description
+        ,enable
+        ,create_time
+        ,create_by
+        ,update_time
+        ,update_by
+        ,delete_flag
+        FROM flow_form_info
+        ) ST
+        <if test="ew.emptyOfWhere == false">
+            ${ew.customSqlSegment}
+        </if>
+    </sql>
+
+    <select id="queryPageList" resultType="org.jeecg.modules.flowform.model.FormInfoModel">
+        select ST.*
+        <include refid="baseSql"/>
+    </select>
+
+    <select id="queryDicItems" resultType="org.jeecg.modules.flowform.model.DicItemModel">
+        select ST.* from (select dic.dict_name,dic.dict_code,item.item_text,item.item_value from sys_dict dic
+        left join sys_dict_item item on dic.id=item.dict_id
+        where dic.del_flag=0 and item.status=1) ST
+        <if test="ew.emptyOfWhere == false">
+            ${ew.customSqlSegment}
+        </if>
+    </select>
+</mapper>
