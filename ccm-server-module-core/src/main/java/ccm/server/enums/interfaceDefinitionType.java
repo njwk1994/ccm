@@ -1,0 +1,43 @@
+package ccm.server.enums;
+
+public enum interfaceDefinitionType {
+    IObject,
+    ISchemaObject,
+    IInterfaceDef,
+    IClassDef,
+    IPropertyDef,
+    IPropertyType,
+    IRelDef,
+    IRel,
+    IEnumEnum,
+    IEnumListType,
+    IEnumListLevelType,
+    ICCMDesignObj,
+    ICIMObjClass,
+    ICIMDocument,
+    IROPExecutableItem,
+    IROPRuleGroup,
+    IROPRuleGroupItem,
+    IROPWorkStep,
+    IWorkStep,
+    ICIMDocumentObject,
+    ICIMDocumentMaster,
+    ICIMDocumentRevision,
+    ICIMDocumentVersion,
+    ICIMRevisionScheme,
+    ICIMFile,
+    ICIMFileType,
+    ICIMMinioConfig,
+    ICIMFileComposition,
+    ICIMRevisionItem,
+    ICIMRevisionCollections,
+    ICustomObject,
+    ICCMPTPackageMaterialSpecification,
+    ICCMPTPackageMaterialSpecificationItem,
+    ICCMPTPackageMaterialTemplate,
+    ICCMPTPackageMaterial,
+    /* 系统级配置 */
+    ICIMSystemConfig,
+    /* 项目级配置 */
+    ICIMProjectConfig
+}
